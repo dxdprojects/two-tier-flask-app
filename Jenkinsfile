@@ -14,7 +14,7 @@ pipeline{
         }
         stage("Push to Docker Hub"){
             steps{
-                withCredentials([usernamePassword(credentialsId: "docker_hub_credentials", passwordVariable: "dockerPass", usernameVariable: "dockerUser")]){
+                withCredentials([usernamePassword(credentialsId: "docker_credentials", passwordVariable: "dockerPass", usernameVariable: "dockerUser")]){
                     sh "docker login -u ${env.dockerUser} -p ${env.dockerPass} "
                     sh "docker image tag flask_app ${env.dockerUser}/flask_app"
                     sh "docker push ${env.dockerUser}/flask_app"
