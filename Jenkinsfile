@@ -19,7 +19,7 @@ pipeline{
         }
         stage("Build"){
             steps{
-                sh "docker build -t flask_app ."
+                sh "docker build -t two_tier_flask_app_shared_library ."
             }
         }
         stage("Push to Docker Hub"){
