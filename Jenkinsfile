@@ -29,7 +29,7 @@ pipeline{
     }
     post {
         success{
-            emailtext(
+            emailext(
                 subject: "Build Success",
                 body: "Your build was successful",
                 to: "deeplearning740@gmail.com"
