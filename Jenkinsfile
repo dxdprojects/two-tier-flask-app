@@ -7,6 +7,11 @@ pipeline{
                 git url: "https://github.com/dxdprojects/two-tier-flask-app.git", branch: "master"
             }
         }
+        stage("Trivy Scan"){
+            steps{
+                sh "trivy fs . -o results.json"
+            }
+        }
         stage("Build"){
             steps{
                 sh "docker build -t flask_app ."
