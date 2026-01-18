@@ -27,4 +27,20 @@ pipeline{
             }
         }
     }
+    post {
+        success{
+            emailtext(
+                subject: "Build Success",
+                body: "Your build was successful",
+                to: "deeplearning740@gmail.com"
+            )
+        }
+        failure{
+             emailtext(
+                subject: "Build Failed",
+                body: "Your build has failed",
+                to: "deeplearning740@gmail.com"
+            )
+        }
+    }
 }
