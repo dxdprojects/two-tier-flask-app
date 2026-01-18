@@ -1,0 +1,5 @@
+mysql-data/
+.git/
+node_modules/
+__pycache__/
+*.log
